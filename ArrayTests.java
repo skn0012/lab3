@@ -6,13 +6,12 @@ public class ArrayTests {
   
   private static final double DELTA = 1e-15;
 	
-  @Test 
+  
 	public void testReverseInPlace() {
     int[] input1 = { 3 };
     ArrayExamples.reverseInPlace(input1);
     assertArrayEquals(new int[]{ 3 }, input1);
 	}
-
 
   @Test
   public void testReversed() {
@@ -32,6 +31,12 @@ public class ArrayTests {
     int[] input = {0, 1};
     assertArrayEquals(new int[]{1, 0}, ArrayExamples.reversed(input));
   }
+
+  @Test 
+  public void testBugReversed2() {
+    int[] input = {0};
+    assertArrayEquals(new int[]{0}, ArrayExamples.reversed(input));
+  }  
 
   @Test
   public void testBugAverageWithoutLowest() {
